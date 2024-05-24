@@ -1,3 +1,29 @@
 .example-card {
-    max-width: 400px;
-  }
+  max-width: 400px;
+}
+
+.blue-button {
+  background-color: #4681f4;
+  color: white;
+}
+
+.green-button {
+  background-color: #33b249;
+  color: white;
+}
+
+.loader {
+  position: absolute;
+  right: 10px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #4681f4;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -8,17 +9,27 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardComponent implements OnInit {
 
   @Input() card;
-  constructor() { }
+  @Output() cardLiked: EventEmitter<any> = new EventEmitter<any>();
+  loading: boolean = false;
+
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
   }
 
-  onLike(card: any){
-    // TODO: incrementar o like, salvar via rest
+  onLike(card: any) {
+    this.loading = true;
+    const cardCopy = { ...card };
+    cardCopy.likes++;
+    this.httpClient.put('/api/skills/' + cardCopy.id, cardCopy)
+    .subscribe(() => {
+      this.cardLiked.emit(cardCopy);
+      this.loading = false;
+    });
   }
 
-  onShare(card: any){
-    // TODO: abrir o link do seu linkedin
+  onShare() {
+    window.open('https://www.linkedin.com/', '_blank');
   }
 
 }

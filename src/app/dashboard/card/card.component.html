@@ -8,8 +8,15 @@
       {{card.description}}
     </p>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE {{card.likes}}</button>
-    <button mat-button>SHARE</button>
+  <mat-card-actions fxLayoutAlign="start center">
+    <button mat-button
+      (click)="onLike(card)"
+      [ngClass]="{'blue-button': card.likes >= 5, 'green-button': card.likes > 10}"
+      [disabled]="loading"
+    >
+      {{card.likes}} {{card.likes === 1 ? "LIKE" : "LIKES"}}
+    </button>
+    <button mat-button (click)="onShare()">SHARE</button>
+    <span *ngIf="loading" class="loader"></span>
   </mat-card-actions>
 </mat-card>
