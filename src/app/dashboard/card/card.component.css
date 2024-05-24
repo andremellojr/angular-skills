@@ -1,5 +1,7 @@
 .example-card {
-  max-width: 400px;
+  background-color: var(--secondary-background-color);
+  color: var(--text-color);
+  margin-bottom: 12px;
 }
 
 .blue-button {
@@ -21,6 +23,27 @@
   width: 15px;
   height: 15px;
   animation: spin 1s linear infinite;
+}
+
+p {
+  height: 8rem;
+}
+
+.img-container {
+  overflow: hidden;
+  margin: 0;
+}
+
+img {
+  height: 200px;
+  object-fit: cover;
+  filter: saturate(85%);
+  transition: filter .5s, transform .5s;
+}
+
+img:hover {
+  transform: scale(1.1);
+  filter: saturate(115%);
 }
 
 @keyframes spin {

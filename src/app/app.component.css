@@ -1,4 +1,13 @@
-p {
-  font-family: Lato;
+.title {
+  text-transform: uppercase;
+}
+
+.header {
+  padding: 0 5%;
+}
+
+.mode {
+  cursor: pointer;
+  padding: 0 12px;
 }
 

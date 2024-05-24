@@ -1,2 +1,21 @@
 /* Add application styles & imports to this file! */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:root {
+  --text-color: #fffdf9;
+  --background-color: #1D2A34;
+  --secondary-background-color: #253341;
+}
+
+[data-theme='light'] {
+  --text-color: #1D2A34;
+  --background-color: #fffdf9;
+  --secondary-background-color: #F3F7F6;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

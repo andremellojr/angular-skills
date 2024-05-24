@@ -2,7 +2,9 @@
   <mat-card-header>
     <mat-card-title>{{card.name}}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image [src]="card.pic" alt="Photo of a Shiba Inu">
+  <div class="img-container">
+    <img mat-card-image [src]="card.pic" alt="Photo of a Shiba Inu">
+  </div>
   <mat-card-content>
     <p>
       {{card.description}}
